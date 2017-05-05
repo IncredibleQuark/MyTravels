@@ -1,0 +1,6 @@
+my_travel:
+    resource: "@MyTravelBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
