@@ -71,3 +71,17 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: MyTravelBundle\Entity\User
+    from_email:
+        address:        mytravels@gmail.com
+        sender_name:    MyTravels
+    registration:
+        confirmation:
+            from_email:
+                address:        mytravels@gmail.com
+                sender_name:    MyTravels
+            enabled:    true # change to false to disable registration email confirmation
+    resetting:
+        email:
+            from_email:
+                address:        mytravels@gmail.com
+                sender_name:    MyTravels
