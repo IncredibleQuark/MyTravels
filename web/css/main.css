@@ -1,7 +1,12 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 
 .navbar {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
+
 
 
 .form-signin {
