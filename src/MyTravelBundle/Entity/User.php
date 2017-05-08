@@ -3,6 +3,7 @@
 
 namespace MyTravelBundle\Entity;
 
+// FOS\UserBundle\Model\User  (FOR FOSUSERBUNDLE VERSION 2.0. HERE 1.3 INSTALLED!)
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -24,4 +25,6 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+
 }
