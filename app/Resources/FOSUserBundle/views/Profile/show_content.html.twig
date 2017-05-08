@@ -1,4 +1,5 @@
-<div class="fos_user_user_show text-center">
+<div class="fos_user_user_show form-signin">
+    <h2 class="form-signin-heading">My Profile</h2>
     <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
     <p class="btn btn-info  btn-lg"><a href="{{ path('fos_user_profile_edit') }}">Edit</a></p>
