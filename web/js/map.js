@@ -38,19 +38,30 @@ function initMap() {
 
 
 $(function() {
-    var submit = $('#submit');
+    var form = $('#saveForm');
 
-    submit.on('click', function () {
+    form.on('submit', function (e) {
+        e.preventDefault();
+
         var city = encodeURI(document.getElementById('city').value);
         var country = encodeURI(document.getElementById('country').value);
         var date = encodeURI(document.getElementById('date').value);
         var type = document.getElementById('type').value;
         var latlng = marker.getPosition();
 
-        console.log(city);
-        console.log(country);
-        console.log(date);
-        console.log(type);
-        console.log(latlng.lat());
+        data = {'city': city, 'country': country, 'date': date, 'type':type, 'lat': latlng.lat(), 'lng': latlng.lng()};
+        var url = "http://127.0.0.1:8000/Travel/new";
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: JSON.stringify(data),
+            dataType: 'json'
+        }).done(function(response) {
+            console.log('hihi');
+        }).fail(function (XHR, textStatus, errorThrown) {
+            console.log("error: " + textStatus);
+            console.log("error: " + errorThrown);
+        })
     })
-})
+});

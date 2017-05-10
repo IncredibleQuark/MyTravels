@@ -1,20 +1,22 @@
 {% extends '::base.html.twig' %}
 
 {%  block content %}
-    <h3>My Google Maps Demo</h3>
+    <h3>Add new location!</h3>
 
     <div id="map"></div>
     <div id="saveForm" class="hidden">
+        <form>
         <table>
             <tr><td>City:</td> <td><input type='text' id='city'/> </td> </tr>
             <tr><td>Country:</td> <td><input type='text' id='country'/> </td> </tr>
             <tr><td>Date:</td> <td><input type='date' id='date'/> </td> </tr>
             <tr><td>Type:</td> <td><select id='type'>
-                        <option value='bar' SELECTED>Holiday</option>
-                        <option value='restaurant'>Work</option>
+                        <option value='holiday' SELECTED>Holiday</option>
+                        <option value='work'>Work</option>
                     </select> </td></tr>
-            <tr><td></td><td><input type='button' value='Save' id="submit"/></td></tr>
+            <tr><td></td><td><input type='submit' value='Save' id="submit"/></td></tr>
         </table>
+        </form>
     </div>
     <div class="hidden" id="successMessage">Location saved</div>
 
