@@ -4,10 +4,14 @@
     <div class="text-center">
         <h3>Users Travels</h3>
 
-        <p>Travel1  city, country, date</p>
-
-        <p>Travel2</p>
-
-        <p>Travel3</p>
+        {% for travel in travels %}
+            <div class="panel">
+                <p><a class="text-danger">{{ travel.user }}</a> added new travel: </p>
+                <p>City:{{ travel.city }} </p>
+                <p>Country: {{ travel.country }}</p>
+                <p>Type: {{ travel.type }}</p>
+                <p>Date: {{ travel.date }} </p><br>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
