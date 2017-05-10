@@ -48,8 +48,9 @@ $(function() {
         var date = encodeURI(document.getElementById('date').value);
         var type = document.getElementById('type').value;
         var latlng = marker.getPosition();
+        var userId = document.getElementById('user_id').innerText;
 
-        data = {'city': city, 'country': country, 'date': date, 'type':type, 'lat': latlng.lat(), 'lng': latlng.lng()};
+        data = {'user': userId, 'city': city, 'country': country, 'date': date, 'type':type, 'lat': latlng.lat(), 'lng': latlng.lng()};
         var url = "http://127.0.0.1:8000/Travel/new";
 
         $.ajax({
@@ -62,6 +63,7 @@ $(function() {
             msg.classList.remove('hidden');
 
         }).fail(function (XHR, textStatus, errorThrown) {
+            alert('Try again!');
             console.log("error: " + textStatus);
             console.log("error: " + errorThrown);
         })

@@ -13,7 +13,7 @@ class TravelType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('city')->add('country')->add('date')->add('lat')->add('lng')->add('type');
+        $builder->add('city')->add('country')->add('date')->add('lat')->add('lng')->add('type')->add('user');
     }
     
     /**

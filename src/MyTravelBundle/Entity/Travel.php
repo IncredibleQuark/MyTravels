@@ -64,9 +64,8 @@ class Travel
     private $type;
 
     /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="MyTravelBundle\Entity\User", inversedBy="travels" )
+     * @ORM\ManyToOne(targetEntity="MyTravelBundle\Entity\User", inversedBy="travels")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 

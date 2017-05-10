@@ -20,10 +20,7 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @ORM\OneToMany(targetEntity="MyTravelBundle\Entity\Travel", mappedBy="user")
-     */
-    private $travels;
+
 
     public function __construct()
     {
@@ -33,36 +30,4 @@ class User extends BaseUser
 
 
 
-    /**
-     * Add travels
-     *
-     * @param \MyTravelBundle\Entity\Travel $travels
-     * @return User
-     */
-    public function addTravel(\MyTravelBundle\Entity\Travel $travels)
-    {
-        $this->travels[] = $travels;
-
-        return $this;
-    }
-
-    /**
-     * Remove travels
-     *
-     * @param \MyTravelBundle\Entity\Travel $travels
-     */
-    public function removeTravel(\MyTravelBundle\Entity\Travel $travels)
-    {
-        $this->travels->removeElement($travels);
-    }
-
-    /**
-     * Get travels
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTravels()
-    {
-        return $this->travels;
-    }
 }

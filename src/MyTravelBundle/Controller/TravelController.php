@@ -52,8 +52,8 @@ class TravelController extends Controller
         $data = $serializer->serialize($dataToConvert, 'json');
         $response = new Response($data);
         $response->headers->set('Content-Type', 'application/json');
-//        $response->headers->set('Access-Control-Allow-Origin', '*');
-//        $response->headers->set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH, OPTIONS');
 
         return $response;
     }
