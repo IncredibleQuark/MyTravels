@@ -26,7 +26,7 @@ function initMap() {
             position: event.latLng,
             map: map
         });
-
+        msg.classList.add('hidden');
 
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
