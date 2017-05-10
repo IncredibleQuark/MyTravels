@@ -58,7 +58,9 @@ $(function() {
             data: JSON.stringify(data),
             dataType: 'json'
         }).done(function(response) {
-            console.log('hihi');
+            infowindow.close();
+            msg.classList.remove('hidden');
+
         }).fail(function (XHR, textStatus, errorThrown) {
             console.log("error: " + textStatus);
             console.log("error: " + errorThrown);
