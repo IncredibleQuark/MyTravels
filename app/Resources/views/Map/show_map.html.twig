@@ -3,27 +3,29 @@
 {%  block content %}
     <h3>My Google Maps Demo</h3>
 
-    <div id="map" height="460px" width="100%"></div>
+    <div id="map"></div>
     <div id="saveForm" class="hidden">
         <table>
             <tr><td>City:</td> <td><input type='text' id='city'/> </td> </tr>
             <tr><td>Country:</td> <td><input type='text' id='country'/> </td> </tr>
             <tr><td>Date:</td> <td><input type='date' id='date'/> </td> </tr>
-            <tr><td>Type:</td> <td><select id='type'> +
+            <tr><td>Type:</td> <td><select id='type'>
                         <option value='bar' SELECTED>Holiday</option>
                         <option value='restaurant'>Work</option>
                     </select> </td></tr>
-            <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+            <tr><td></td><td><input type='button' value='Save' id="submit"/></td></tr>
         </table>
     </div>
     <div class="hidden" id="successMessage">Location saved</div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="{{ asset('js/map.js') }}"></script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk7HtqFKd7XU7U1_nefAUQvqdJSLSj0Q&callback=initMap">
-    </script>
-
 
 {% endblock %}
+
+    {% block additionalscripts %}
+        <script src="{{ asset('js/map.js') }}"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk7HtqFKd7XU7U1_nefAUQvqdJSLSj0Q&callback=initMap">
+        </script>
+
+    {% endblock %}

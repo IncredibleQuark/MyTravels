@@ -35,41 +35,22 @@ function initMap() {
     });
 }
 
-function saveData() {
-    var city = encodeURI(document.getElementById('city').value);
-    var country = encodeURI(document.getElementById('country').value);
-    var date = encodeURI(document.getElementById('date').value);
-    var type = document.getElementById('type').value;
-    var latlng = marker.getPosition();
-    var url = 'phpsqlinfo_addrow.php?city=' + city + '&country=' + country + '&date=' + date +
-        '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
 
-    msg.classList.remove('hidden');
 
-    downloadUrl(url, function(data, responseCode) {
+$(function() {
+    var submit = $('#submit');
 
-        if (responseCode === 200 && data.length <= 1) {
-            infowindow.close();
-            messagewindow.open(map, marker);
-        }
-    });
-}
+    submit.on('click', function () {
+        var city = encodeURI(document.getElementById('city').value);
+        var country = encodeURI(document.getElementById('country').value);
+        var date = encodeURI(document.getElementById('date').value);
+        var type = document.getElementById('type').value;
+        var latlng = marker.getPosition();
 
-function downloadUrl(url, callback) {
-    var request = window.ActiveXObject ?
-        new ActiveXObject('Microsoft.XMLHTTP') :
-        new XMLHttpRequest;
-
-    request.onreadystatechange = function() {
-        if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request.responseText, request.status);
-        }
-    };
-
-    request.open('GET', url, true);
-    request.send(null);
-}
-
-function doNothing () {
-}
+        console.log(city);
+        console.log(country);
+        console.log(date);
+        console.log(type);
+        console.log(latlng.lat());
+    })
+})
