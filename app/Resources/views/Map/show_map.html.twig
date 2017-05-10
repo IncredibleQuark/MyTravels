@@ -2,22 +2,27 @@
 
 {%  block content %}
     <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            var uluru = {lat: -25.363, lng: 131.044};
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: uluru
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
-    </script>
+
+    <div id="map" height="460px" width="100%"></div>
+    <div id="form">
+        <table>
+            <tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>
+            <tr><td>Address:</td> <td><input type='text' id='address'/> </td> </tr>
+            <tr><td>Type:</td> <td><select id='type'> +
+                        <option value='bar' SELECTED>bar</option>
+                        <option value='restaurant'>restaurant</option>
+                    </select> </td></tr>
+            <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+        </table>
+    </div>
+    <div id="message">Location saved</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{ asset('js/map.js') }}"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk7HtqFKd7XU7U1_nefAUQvqdJSLSj0Q&callback=initMap">
     </script>
+
 
 {% endblock %}
