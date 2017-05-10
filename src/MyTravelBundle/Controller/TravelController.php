@@ -23,7 +23,7 @@ class TravelController extends Controller
      */
     public function newAction(Request $request)
     {
-        //Pobranie danych przesłanych JSON-em
+
         $data = json_decode($request->getContent(), true);
 
         $travel = new Travel();
