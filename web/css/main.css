@@ -3,7 +3,7 @@ body {
     padding-bottom: 70px;
 }
 #map {
-    height: 400px;
+    height: 600px;
     width: 100%;
     border: 1px solid black;
 }
