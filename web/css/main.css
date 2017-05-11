@@ -2,10 +2,16 @@ body {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
 #map {
     height: 600px;
     width: 100%;
     border: 1px solid black;
+}
+
+.search {
+    padding: 10px;
+    padding-left: 100px;
 }
 
 .card {
@@ -14,6 +20,11 @@ body {
     width: 60rem;
 }
 
+.navbar-buttons  {
+   font-family: sans-serif;
+    font-size: 15px;
+    color: #3f3f3f;
+}
 
 .navbar {
     margin-bottom: 20px;
@@ -22,14 +33,11 @@ body {
     background-color: #84d2f6;
 }
 
-
 .container {
     background-color: #386fa4;
     min-height: 1200px;
     padding: 20px;
 }
-
-
 
 .form-signin {
     max-width: 330px;
