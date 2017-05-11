@@ -9,7 +9,12 @@ function initMap() {
     var atlantic = {lat: 35.444732, lng: -39.2746};
     map = new google.maps.Map(document.getElementById('map'), {
         center: atlantic,
-        zoom: 3
+        zoom: 3,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.TOP_CENTER
+        }
     });
 
     infowindow = new google.maps.InfoWindow({

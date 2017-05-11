@@ -7,10 +7,12 @@
         {% for travel in travels %}
             <div class="panel">
                 <p><a href="{{ path('mytravel_friend_showuserbyid', {'id': travel.user.id}) }}" class="text-danger">{{ travel.user }}</a> added new travel: </p>
-                <p>City:{{ travel.city }} </p>
-                <p>Country: {{ travel.country }}</p>
-                <p>Type: {{ travel.type }}</p>
-                <p>Date: {{ travel.date }} </p><br>
+                <div class="panel-body">
+                    <p>City:{{ travel.city }} </p>
+                    <p>Country: {{ travel.country }}</p>
+                    <p>Type: {{ travel.type }}</p>
+                    <p>Date: {{ travel.date }} </p><br>
+                </div>
             </div>
         {% endfor %}
     </div>

@@ -1,11 +1,19 @@
 /**
  * Created by kruku on 11.05.17.
  */
+
+var map;
+
 function initMap() {
     var atlantic = {lat: 35.444732, lng: -39.2746};
     map = new google.maps.Map(document.getElementById('map'), {
         center: atlantic,
-        zoom: 3
+        zoom: 3,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.TOP_CENTER
+        }
     })}
 
 var image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
@@ -29,10 +37,13 @@ $(function () {
                 animation: google.maps.Animation.DROP,
                 icon: image,
                 title: value.city+' '+value.country
+
             });
 
         })
     }).fail(function(error) {
         alert('Something went wrong!');
     });
-});
+
+
+})
