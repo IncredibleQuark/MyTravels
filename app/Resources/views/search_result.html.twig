@@ -1,0 +1,11 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    <h1>Search result...</h1>
+    <div class="">
+    {% for user in users %}
+
+        <p><a href="{{ path('mytravel_friend_showuserbyid', {'id': user.id}) }}">{{ user.username }}</a></p>
+    {% endfor %}
+    </div>
+{% endblock fos_user_content %}

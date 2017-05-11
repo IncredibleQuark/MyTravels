@@ -9,8 +9,10 @@
 namespace MyTravelBundle\Controller;
 
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 
 class UserController
 {
@@ -22,5 +24,18 @@ class UserController
         $user = 'luki';
 
         return ['user' => $user];
+    }
+
+    /**
+     * @Route("/searchResult")
+     * @Template(":search_result.html.twig")
+     * @Method("POST")
+     */
+    public function searchUserAction(Request $request)
+    {
+        $word = $request->request->get('search');
+
+        $users = $this->$this->container->get('doctrine')->getRepository('MyTravelBundle:User')->findByUsername($word);
+        return ['users' => $users];
     }
 }
