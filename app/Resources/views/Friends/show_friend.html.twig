@@ -1,5 +1,20 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block fos_user_content %}
-    {{ friend.username }}
+    <div class="card center-block">
+        <img class="card-img-top" src="..." alt="User photo">
+        <div class="card-block">
+            <h4 class="card-title text-center"><strong>{{ friend.username }}</strong></h4>
+            <p class="card-text text-center">description</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Email: {{ friend.email }}</li>
+            <li class="list-group-item">Total travels: </li>
+            <li class="list-group-item">Achievements: </li>
+        </ul>
+        <div class="card-block">
+            <a href="#" class="card-link btn btn-primary">Send Message</a>
+            <a href="#" class="card-link btn btn-danger">Remove from friends</a>
+        </div>
+    </div>
 {% endblock fos_user_content %}

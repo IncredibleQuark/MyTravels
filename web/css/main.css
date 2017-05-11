@@ -8,6 +8,12 @@ body {
     border: 1px solid black;
 }
 
+.card {
+    padding: 20px;
+    background-color: #80b3d6;
+    width: 60rem;
+}
+
 
 .navbar {
     margin-bottom: 20px;
@@ -19,7 +25,8 @@ body {
 
 .container {
     background-color: #a08794;
-    min-height: 800px;
+    min-height: 1200px;
+    padding: 20px;
 }
 
 
