@@ -6,10 +6,10 @@ var form =  document.getElementById('saveForm');
 var msg =  document.getElementById('successMessage');
 
 function initMap() {
-    var california = {lat: 37.4419, lng: -122.1419};
+    var atlantic = {lat: 35.444732, lng: -39.2746};
     map = new google.maps.Map(document.getElementById('map'), {
-        center: california,
-        zoom: 4
+        center: atlantic,
+        zoom: 3
     });
 
     infowindow = new google.maps.InfoWindow({
