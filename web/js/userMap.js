@@ -2,12 +2,13 @@
  * Created by kruku on 11.05.17.
  */
 function initMap() {
-    var california = {lat: 37.4419, lng: -122.1419};
+    var atlantic = {lat: 35.444732, lng: -39.2746};
     map = new google.maps.Map(document.getElementById('map'), {
-        center: california,
-        zoom: 4
-
+        center: atlantic,
+        zoom: 3
     })}
+
+var image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 
 $(function () {
 
@@ -17,8 +18,21 @@ $(function () {
         url: url,
         dataType: 'json'
     }).done(function (response) {
-        console.log(response);
-    }).fail(function(error) {
 
+        $.each(response, function(index, value) {
+
+            var myLatLng = {lat: value.lat, lng: value.lng};
+
+            new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                animation: google.maps.Animation.DROP,
+                icon: image,
+                title: value.city+' '+value.country
+            });
+
+        })
+    }).fail(function(error) {
+        alert('Something went wrong!');
     });
 });
