@@ -18,4 +18,11 @@ class TravelRepository extends EntityRepository
         $travels = $this->getEntityManager()->createQuery($dql)->getResult();
         return $travels;
     }
+
+    public function findById($id)
+    {
+        $dql = "SELECT travel FROM MyTravelBundle:Travel travel WHERE travel.user = $id";
+        $travels = $this->getEntityManager()->createQuery($dql)->getResult();
+        return $travels;
+    }
 }

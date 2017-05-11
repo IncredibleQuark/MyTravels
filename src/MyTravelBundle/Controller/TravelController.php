@@ -15,6 +15,24 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 class TravelController extends Controller
 {
+
+    private function convertJson($dataToConvert)
+    {
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+
+        $serializer = new Serializer($normalizers, $encoders);
+        $data = $serializer->serialize($dataToConvert, 'json');
+        $response = new Response($data);
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH, OPTIONS');
+
+        return $response;
+    }
+
+
+
     /**
      * Creates a new travel entity.
      *
@@ -43,18 +61,21 @@ class TravelController extends Controller
         return $this->convertJson($result);
     }
 
-    private function convertJson($dataToConvert)
+    /**
+     * @Route("/profile/getMapData/", name="profile_map")
+     */
+    public function loadUserTravelsAction()
     {
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $normalizers = array(new ObjectNormalizer());
+        $id = $this->getUser()->getId();
+        $travels = $this->getDoctrine()->getRepository('MyTravelBundle:Travel')->findById($id);
 
-        $serializer = new Serializer($normalizers, $encoders);
-        $data = $serializer->serialize($dataToConvert, 'json');
-        $response = new Response($data);
-        $response->headers->set('Content-Type', 'application/json');
-        $response->headers->set('Access-Control-Allow-Origin', '*');
-        $response->headers->set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH, OPTIONS');
+        if (!$travels) {
+            $result = ['error' => 'Something wrong!'];
+            return $this->convertJson($result);
+        }
 
-        return $response;
+        return $this->convertJson($travels);
     }
+
+
 }

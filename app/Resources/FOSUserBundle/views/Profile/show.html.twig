@@ -2,4 +2,13 @@
 
 {% block fos_user_content %}
 {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+    <div id="map"></div>
 {% endblock fos_user_content %}
+
+
+{% block additionalscripts %}
+    <script src="{{ asset('js/userMap.js') }}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk7HtqFKd7XU7U1_nefAUQvqdJSLSj0Q&callback=initMap">
+    </script>
+{% endblock %}

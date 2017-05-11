@@ -39,7 +39,7 @@ function initMap() {
 
 $(function() {
     var form = $('#saveForm');
-
+    
     form.on('submit', function (e) {
         e.preventDefault();
 
