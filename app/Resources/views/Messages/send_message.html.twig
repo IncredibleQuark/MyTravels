@@ -1,0 +1,12 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+
+<h1>Send Message to {{ user.username }}</h1>
+<div class="form-signin">
+    <form action="" method="POST">
+        <textarea required></textarea>
+        <input type="submit" class="btn btn-primary btn-block"/>
+    </form>
+</div>
+{% endblock fos_user_content %}
