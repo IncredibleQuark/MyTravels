@@ -1,12 +1,12 @@
 
 <div class="card center-block">
-    <img class="card-img-to img-circle center-block " src="{{ asset('images/default_profile.jpg') }}" alt="User photo">
+    <img class="card-img-to img-circle center-block " src="{{ asset('images/photo.jpeg') }}" alt="User photo">
     <div class="card-block">
         <h4 class="card-title text-center"><strong>{{ user.username }}</strong></h4>
         <p class="card-text text-center">description</p>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span> {{ user.email }}</li>
+        <li class="list-group-item"><i class="fi-at-sign"></i> {{ user.email }}</li>
     </ul>
     <div class="card-block">
        <a class="btn btn-default btn-lg" href="{{ path('fos_user_profile_edit') }}">Edit</a>
