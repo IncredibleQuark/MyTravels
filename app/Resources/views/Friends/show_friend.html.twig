@@ -2,9 +2,9 @@
 
 {% block fos_user_content %}
     <div class="card center-block">
-        <img class="card-img-top" src="..." alt="User photo">
+        <img class="card-img-top img-circle center-block" src="{{ asset('images/default_profile.jpg') }}" alt="User photo">
         <div class="card-block">
-            <h4 class="card-title text-center"><strong>{{ friend.username }}</strong></h4>
+            <h4 class="card-title text-center" id="friend_id" data-id="{{ friend.id }}"><strong>{{ friend.username }}</strong></h4>
             <p class="card-text text-center">description</p>
         </div>
         <ul class="list-group list-group-flush">
@@ -17,4 +17,15 @@
             <a href="#" class="card-link btn btn-danger">Remove from friends</a>
         </div>
     </div>
+<br>
+
+    <div id="map"></div>
+
 {% endblock fos_user_content %}
+
+{% block additionalscripts %}
+    <script src="{{ asset('js/friendMap.js') }}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk7HtqFKd7XU7U1_nefAUQvqdJSLSj0Q&callback=initMap">
+    </script>
+{% endblock %}

@@ -1,15 +1,15 @@
 
 <div class="card center-block">
-    <img class="card-img-top" src="..." alt="User photo">
+    <img class="card-img-to img-circle center-block " src="{{ asset('images/default_profile.jpg') }}" alt="User photo">
     <div class="card-block">
         <h4 class="card-title text-center"><strong>{{ user.username }}</strong></h4>
         <p class="card-text text-center">description</p>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ user.email }}</li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span> {{ user.email }}</li>
     </ul>
     <div class="card-block">
-        <p class="btn btn-default  btn-lg"><a href="{{ path('fos_user_profile_edit') }}">Edit</a></p>
+       <a class="btn btn-default btn-lg" href="{{ path('fos_user_profile_edit') }}">Edit</a>
     </div>
 </div>
 
