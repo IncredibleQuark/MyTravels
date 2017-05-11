@@ -17,7 +17,7 @@ class BoardController extends Controller
     public function ShowTravelsAction()
     {
 
-        $travels = $this->getDoctrine()->getRepository('MyTravelBundle:Travel')->findAll();
+        $travels = $this->getDoctrine()->getRepository('MyTravelBundle:Travel')->sortById();
 
         if (!$travels) {
             return $this->redirectToRoute('mytravel_map_showmap');

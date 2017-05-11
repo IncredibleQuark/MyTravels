@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class TravelRepository extends EntityRepository
 {
+    public function sortById()
+    {
+        $dql = "SELECT travel FROM MyTravelBundle:Travel travel ORDER BY travel.id DESC ";
+        $travels = $this->getEntityManager()->createQuery($dql)->getResult();
+        return $travels;
+    }
 }
