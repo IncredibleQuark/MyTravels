@@ -77,5 +77,19 @@ class TravelController extends Controller
         return $this->convertJson($travels);
     }
 
+    /**
+     * @Route("/friend/getMapData/{id}", name="friend_map")
+     */
+    public function loadTravelsByUserIdAction($id)
+    {
 
+        $travels = $this->getDoctrine()->getRepository('MyTravelBundle:Travel')->findById($id);
+
+        if (!$travels) {
+            $result = ['error' => 'Something wrong!'];
+            return $this->convertJson($result);
+        }
+
+        return $this->convertJson($travels);
+    }
 }

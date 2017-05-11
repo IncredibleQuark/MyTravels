@@ -99,8 +99,8 @@ function initMap() {
 var image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 
 $(function () {
-
-    var url = "http://127.0.0.1:8000/profile/getMapData/";
+    var id = $('#friend_id').data('id');
+    var url = "http://127.0.0.1:8000/friend/getMapData/"+id;
 
     $.ajax({
         url: url,
@@ -126,4 +126,6 @@ $(function () {
     });
 
 
-})
+})/**
+ * Created by kruku on 11.05.17.
+ */
