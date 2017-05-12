@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class MessageRepository extends EntityRepository
 {
+    public function findByReceiverId($id)
+    {
+        $dql = "SELECT message FROM MyTravelBundle:Message message WHERE message.receiverId = $id ";
+        $travels = $this->getEntityManager()->createQuery($dql)->getResult();
+        return $travels;
+    }
 }

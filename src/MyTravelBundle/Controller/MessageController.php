@@ -32,8 +32,6 @@ class MessageController extends Controller
         return $response;
     }
 
-
-
     /**
      * Creates a new travel entity.
      *
@@ -60,5 +58,23 @@ class MessageController extends Controller
 
         $result = ['error'=>'Brak dostępu'];
         return $this->convertJson($result);
+    }
+
+    /**
+     * @Route("/Message/showall")
+     * @Template(":Messages:show_all.html.twig")
+     */
+    public function showAllMessagesAction()
+    {
+        $id = $this->getUser()->getId();
+        $messages = $this->getDoctrine()->getRepository('MyTravelBundle:Message')->findByReceiverId($id);
+
+        if (!$messages) {
+            //TODO: Correct exception handling
+            $result = "Messages not found";
+            return ['result' => $result];
+        }
+
+        return ['messages' => $messages];
     }
 }
