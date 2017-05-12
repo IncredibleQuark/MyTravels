@@ -18,9 +18,11 @@
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
             {% else %}
-                <div class="jumbotron">
+                <div class="jumbotron text-center">
                     <h1>Welcome to myTravels.com!</h1>
-                    <p>Clik here to register new account!</p>
+                    <p>Clik here to </p>
+                    <p><a class="btn btn-primary btn-lg" href="{{ path('fos_user_security_login') }}" role="button">SignUp</a></p>
+                    <p>or here to register new account!</p>
                     <p><a class="btn btn-primary btn-lg" href="{{ path('fos_user_registration_register') }}" role="button">Register</a></p>
                 </div>
             {% endif %}
