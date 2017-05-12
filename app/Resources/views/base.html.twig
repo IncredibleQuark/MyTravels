@@ -15,8 +15,15 @@
 {%  include('::navtop.html.twig') %}
         <div class="container">
             {%  block content %}
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-
+            {% else %}
+                <div class="jumbotron">
+                    <h1>Welcome to myTravels.com!</h1>
+                    <p>Clik here to register new account!</p>
+                    <p><a class="btn btn-primary btn-lg" href="{{ path('fos_user_registration_register') }}" role="button">Register</a></p>
+                </div>
+            {% endif %}
             {% endblock %}
         </div>
 

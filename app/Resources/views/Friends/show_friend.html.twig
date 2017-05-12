@@ -13,7 +13,7 @@
             <li class="list-group-item">Achievements: </li>
         </ul>
         <div class="card-block">
-            <a href="{{ path('mytravel_message_showsendmessageform') }}" class="card-link btn btn-primary"><i class="glyphicon glyphicon-send"></i> Send Message</a>
+            <a id="sendMessage" class="card-link btn btn-primary"><i class="glyphicon glyphicon-send"></i> Send Message</a>
             <a href="#" class="card-link btn btn-danger"><i class=" 	glyphicon glyphicon-trash"></i> Remove from friends</a>
         </div>
     </div>
@@ -24,6 +24,7 @@
 {% endblock fos_user_content %}
 
 {% block additionalscripts %}
+    <script src="{{ asset('js/sendMessage.js') }}"></script>
     <script src="{{ asset('js/friendMap.js') }}"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAk7HtqFKd7XU7U1_nefAUQvqdJSLSj0Q&callback=initMap">
