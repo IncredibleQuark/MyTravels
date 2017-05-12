@@ -12,5 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class UserRepository extends EntityRepository
 {
-
+//    public function findByUsername($id)
+//    {
+//        $dql = "SELECT fos_user FROM FOSUserBundle:USER user WHERE user.username LIKE";
+//        $travels = $this->getEntityManager()->createQuery($dql)->getResult();
+//        return $travels;
+//    }
 }

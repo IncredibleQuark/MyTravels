@@ -26,16 +26,18 @@ class UserController
         return ['user' => $user];
     }
 
-    /**
-     * @Route("/searchResult")
-     * @Template(":search_result.html.twig")
-     * @Method("POST")
-     */
-    public function searchUserAction(Request $request)
-    {
-        $word = $request->request->get('search');
-
-        $users = $this->$this->container->get('doctrine')->getRepository('MyTravelBundle:User')->findByUsername($word);
-        return ['users' => $users];
-    }
+//    /**
+//     * @Route("/searchResult")
+//     * @Template("search_result.html.twig")
+//     * @Method("POST")
+//     */
+//    public function searchUserAction(Request $request)
+//    {
+//        $word = $request->request->get('search');
+//
+//        $userManager = $this->userManager->
+//        $users = $this->$this->get('fos_user.user_manager')->findUserByUsername($word);
+//
+//        return ['users' => $users];
+//    }
 }
