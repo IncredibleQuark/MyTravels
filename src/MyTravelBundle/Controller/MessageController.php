@@ -2,18 +2,63 @@
 
 namespace MyTravelBundle\Controller;
 
+use MyTravelBundle\Entity\Message;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 class MessageController extends Controller
 {
+
+    private function convertJson($dataToConvert)
+    {
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+
+        $serializer = new Serializer($normalizers, $encoders);
+        $data = $serializer->serialize($dataToConvert, 'json');
+        $response = new Response($data);
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, PATCH, OPTIONS');
+
+        return $response;
+    }
+
+
+
     /**
-     * @Route("/Message/new")
-     * @Template(":Messages:send_message.html.twig")
+     * Creates a new travel entity.
+     *
+     * @Route("/Message/new/send", name="message_new")
+     * @Method({"POST"})
      */
-    public function showSendMessageFormAction()
+    public function newMessageAction(Request $request)
     {
 
+        $data = json_decode($request->getContent(), true);
+
+        $message = new Message();
+        $form = $this->createForm('MyTravelBundle\Form\MessageType', $message);
+        $form->submit($data);
+
+        if ($form->isSubmitted()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($message);
+            $em->flush();
+
+            return $this->convertJson($message);
+        }
+
+        $result = ['error'=>'Brak dostępu'];
+        return $this->convertJson($result);
     }
 }

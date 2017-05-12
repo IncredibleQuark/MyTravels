@@ -43,9 +43,9 @@ class Message
     private $content;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="date", type="string")
      */
     private $date;
 
