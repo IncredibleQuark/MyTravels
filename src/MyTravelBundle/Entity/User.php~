@@ -20,16 +20,14 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @ORM\OneToMany(targetEntity="MyTravelBundle\Entity\Travel", mappedBy="user")
-     */
-    private $travels;
+
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
     }
+
 
 
 }

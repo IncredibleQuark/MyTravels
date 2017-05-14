@@ -16,28 +16,5 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController
 {
-    /**
-     * @Route("/")
-     * @Template("base.html.twig")
-     */
-    public function testAction() {
-        $user = 'luki';
 
-        return ['user' => $user];
-    }
-
-//    /**
-//     * @Route("/searchResult")
-//     * @Template("search_result.html.twig")
-//     * @Method("POST")
-//     */
-//    public function searchUserAction(Request $request)
-//    {
-//        $word = $request->request->get('search');
-//
-//        $userManager = $this->userManager->
-//        $users = $this->$this->get('fos_user.user_manager')->findUserByUsername($word);
-//
-//        return ['users' => $users];
-//    }
 }
