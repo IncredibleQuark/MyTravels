@@ -5,13 +5,19 @@
         <div class="panel-heading">
             <h3 class="panel-title text-center">My Messages</h3>
         </div>
-        {% for message in messages %}
+        {%  if messages is not defined %}
             <div class="panel-body">
-                <p class="btn btn-info">From: {{ message.senderId }}</p>
-                <p class="panel-info">Date: {{ message.date }}</p>
-                <p class="panel-body">{{ message.content }}</p>
+                <h3>You have no messages!</h3>
             </div>
-        {% endfor %}
+        {% else %}
+            {% for message in messages %}
+                <div class="panel-body">
+                    <p class="btn btn-info">From: {{ message.senderId }}</p>
+                    <p class="panel-info">Date: {{ message.date }}</p>
+                    <p class="panel-body">{{ message.content }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
 {% endblock fos_user_content %}

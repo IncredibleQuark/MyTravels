@@ -14,6 +14,7 @@ $(function () {
 
 
 
+
     sendBtn.on('click', function () {
 
         sendBtn.off('click');
@@ -50,9 +51,13 @@ $(function () {
             sendBtn.prop( "disabled", false );
             cardblock.find('#msgDiv').remove();
 
-        }).fail(function (error) {
+            var sent = "<p class='bg-success'>Message sent!</p>";
 
-            console.log(error);
+            cardblock.append(sent);
+
+        }).fail(function () {
+
+            alert('Write something first!');
 
         })
     })
