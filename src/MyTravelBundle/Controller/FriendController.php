@@ -26,7 +26,12 @@ class FriendController extends Controller
     public function showUserById($id)
     {
         $friend = $this->getDoctrine()->getRepository('MyTravelBundle:User')->find($id);
+        $travels  = $this->getDoctrine()->getRepository('MyTravelBundle:Travel')->findById($id);
 
-        return ['friend' => $friend];
+        $result = count((array)$travels);
+        if ($result === 0) {
+            return ['friend' => $friend, 'travels' => "User doesn't have travels yet!"];
+        }
+        return ['friend' => $friend, 'travels' => $result];
     }
 }
