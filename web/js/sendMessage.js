@@ -6,7 +6,7 @@ $(function () {
     var sendBtn = $('#sendMessage');
 
     var receiverId = cardblock.find('#friend_id').data('id');
-    var senderId = parseInt($('#sender_id').text());
+    var senderId = $('#sender_id').text();
     var status = 0;
 
     var textarea = "<br><div class='card-block'><textarea id='content' rows='5' style='width: 500px' class='cardlink' required></textarea>" +
@@ -33,7 +33,9 @@ $(function () {
         //     (day < 10 ? '0' : '') + day;
         var date = "12/05/2017";
 
+
         var data = {'senderId': senderId, 'receiverId': receiverId, 'content': content, 'date': date, 'status': status};
+
 
         $.ajax({
             url: "http://127.0.0.1:8000/Message/new/send",

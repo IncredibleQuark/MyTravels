@@ -33,8 +33,6 @@ class MessageController extends Controller
     }
 
     /**
-     * Creates a new travel entity.
-     *
      * @Route("/Message/new/send", name="message_new")
      * @Method({"POST"})
      */
