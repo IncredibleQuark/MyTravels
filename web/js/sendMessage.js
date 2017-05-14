@@ -9,12 +9,15 @@ $(function () {
     var senderId = $('#sender_id').text();
     var status = 0;
 
-    var textarea = "<br><div class='card-block'><textarea id='content' rows='5' style='width: 500px' class='cardlink' required></textarea>" +
+    var textarea = "<br><div id='msgDiv' class='card-block'><textarea id='content'   rows='5' style='width: 500px' class='cardlink' required></textarea>" +
         "<button id='sendConfBtn' class='btn btn-primary' type='submit'>Send</button></div>";
 
 
 
     sendBtn.on('click', function () {
+
+        sendBtn.off('click');
+        sendBtn.prop( "disabled", true );
 
         $(this).parent().parent().append(textarea);
     });
@@ -44,7 +47,8 @@ $(function () {
             type: 'json'
         }).done(function (response) {
 
-            console.log(response);
+            sendBtn.prop( "disabled", false );
+            cardblock.find('#msgDiv').remove();
 
         }).fail(function (error) {
 
