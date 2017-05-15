@@ -13,7 +13,7 @@
             {% for message in messages %}
                 <div class="panel-body">
                     <p class="btn btn-info">From: {{ message.senderId }}</p>
-                    <p class="panel-info">Date: {{ message.date }}</p>
+                    <p class="panel-info">Date: {{ message.date|date('d-m-Y H:i:s') }}</p>
                     <p class="panel-body">{{ message.content }}</p>
                 </div>
             {% endfor %}

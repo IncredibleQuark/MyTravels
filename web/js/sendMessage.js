@@ -27,18 +27,9 @@ $(function () {
 
         var content = cardblock.find('#content').val();
 
-        //TODO: send date in proper format so it can be encoded in controller
-        // var d = new Date();
-        // //get current date
-        // var month = d.getMonth() + 1;
-        // var day = d.getDate();
-        // var date = d.getFullYear() + '/' +
-        //     (month < 10 ? '0' : '') + month + '/' +
-        //     (day < 10 ? '0' : '') + day;
-        var date = "12/05/2017";
 
-
-        var data = {'senderId': senderId, 'receiverId': receiverId, 'content': content, 'date': date, 'status': status};
+        //Date is set in the MessageController
+        var data = {'senderId': senderId, 'receiverId': receiverId, 'content': content, 'status': status};
 
 
         $.ajax({

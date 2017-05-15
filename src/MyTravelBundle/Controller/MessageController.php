@@ -42,7 +42,14 @@ class MessageController extends Controller
         $data = json_decode($request->getContent(), true);
 
         $message = new Message();
+
         $form = $this->createForm('MyTravelBundle\Form\MessageType', $message);
+
+        //Adding current date
+        $currDate = new \DateTime('now');
+        $formatDate = $currDate->format('Y-m-d H:i:s');
+        $message->setDate(new \DateTime($formatDate));
+
         $form->submit($data);
 
         if ($form->isSubmitted()) {
@@ -54,7 +61,7 @@ class MessageController extends Controller
             return $this->convertJson($message);
         }
 
-        $result = ['error'=>'Brak dostępu'];
+        $result = ['error'=>'Access denied!'];
         return $this->convertJson($result);
     }
 
