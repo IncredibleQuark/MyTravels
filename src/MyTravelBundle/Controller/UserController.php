@@ -16,5 +16,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController
 {
+    /**
+     * @Route("/")
+     * @Template("base.html.twig")
+     */
+    public function testAction() {
+            $user = 'luki';
 
+            return ['user' => $user];
+    }
 }
