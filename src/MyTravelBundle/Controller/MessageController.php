@@ -45,7 +45,6 @@ class MessageController extends Controller
 
         $form = $this->createForm('MyTravelBundle\Form\MessageType', $message);
 
-        //Adding current date
         $currDate = new \DateTime('now');
         $formatDate = $currDate->format('Y-m-d H:i:s');
         $message->setDate(new \DateTime($formatDate));

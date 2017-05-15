@@ -29,6 +29,13 @@ class Message
     private $senderId;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="sender_username", type="string", length=60)
+     */
+    private $senderUsername;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="receiver_id", type="integer")
@@ -179,5 +186,28 @@ class Message
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set senderUsername
+     *
+     * @param string $senderUsername
+     * @return Message
+     */
+    public function setSenderUsername($senderUsername)
+    {
+        $this->senderUsername = $senderUsername;
+
+        return $this;
+    }
+
+    /**
+     * Get senderUsername
+     *
+     * @return string 
+     */
+    public function getSenderUsername()
+    {
+        return $this->senderUsername;
     }
 }

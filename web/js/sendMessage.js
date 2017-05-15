@@ -4,9 +4,12 @@
 $(function () {
     var cardblock = $('.card');
     var sendBtn = $('#sendMessage');
-
+    
     var receiverId = cardblock.find('#friend_id').data('id');
+
     var senderId = $('#sender_id').text();
+    var senderUsername = $('#sender_username').text();
+
     var status = 0;
 
     var textarea = "<br><div id='msgDiv' class='card-block'><textarea id='content'   rows='5' style='width: 500px' class='cardlink' required></textarea>" +
@@ -29,7 +32,7 @@ $(function () {
 
 
         //Date is set in the MessageController
-        var data = {'senderId': senderId, 'receiverId': receiverId, 'content': content, 'status': status};
+        var data = {'senderId': senderId,  'senderUsername': senderUsername, 'receiverId': receiverId, 'content': content, 'status': status};
 
 
         $.ajax({

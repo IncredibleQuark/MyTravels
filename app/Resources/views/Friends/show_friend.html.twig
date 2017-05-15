@@ -3,6 +3,7 @@
 {% block fos_user_content %}
     <div class="card center-block">
         <p class="hidden" id="sender_id">{{ app.user.id }}</p>
+        <p class="hidden" id="sender_username">{{ app.user.username }}</p>
         <img class="card-img-top img-circle center-block" src="{{ asset('images/default_profile.jpg') }}" alt="User photo">
         <div class="card-block">
             <h4 class="card-title text-center" id="friend_id" data-id="{{ friend.id }}"><strong>{{ friend.username }}</strong></h4>
