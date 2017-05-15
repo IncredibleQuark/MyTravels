@@ -4,7 +4,7 @@
 $(function () {
     var cardblock = $('.card');
     var sendBtn = $('#sendMessage');
-    
+
     var receiverId = cardblock.find('#friend_id').data('id');
 
     var senderId = $('#sender_id').text();
