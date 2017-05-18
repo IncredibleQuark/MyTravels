@@ -9,7 +9,8 @@
         <li class="list-group-item"><i class="fi-at-sign"></i> {{ user.email }}</li>
     </ul>
     <div class="card-block">
-       <a class="btn btn-default btn-lg" href="{{ path('fos_user_profile_edit') }}">Edit</a>
+       <a class="btn btn-default btn-lg" href="{{ path('fos_user_profile_edit') }}">Edit Basic Info</a>
+        <a class="btn btn-default btn-lg" href="{{ path('mytravel_userinfo_showeditform', {'id': app.user.id} ) }}">Edit</a>
     </div>
 </div>
 

@@ -2,7 +2,7 @@
 
 
 
-    <h2 class="form-signin-heading">Edit Profile</h2>
+    <h2 class="form-signin-heading">Edit Basic Info</h2>
 
     {{ form_label(form.username, null, { 'label_attr': {'class': 'sr-only'} }) }}
     {{ form_errors(form.username) }}
@@ -15,8 +15,8 @@
 
 
 
-        {{ form_label(form.current_password, null, { 'label_attr': {'class': 'sr-only'} }) }}
-        {{ form_widget(form.current_password, { 'attr': {'class': 'form-control',  'placeholder':"Password"} }) }}
+        {{ form_label(form.current_password, null, { 'label_attr': {'class': 'hidden'} }) }}
+        {{ form_widget(form.current_password, { 'attr': {'class': 'hidden form-control',  'placeholder':"Password"} }) }}
 
 
     {{ form_widget(form) }}

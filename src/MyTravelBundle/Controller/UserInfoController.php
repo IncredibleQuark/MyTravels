@@ -12,10 +12,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class UserInfoController extends Controller
 {
     /**
+     * @Route("profile/edit/newInfo/{id}")
      * @Template("FOSUserBundle:Profile:info_form.html.twig")
      * @Method("GET")
      */
-    public function showNewInfoFormAction()
+    public function showNewInfoFormAction($id)
     {
         $contact = new UserInfo();
 
@@ -26,10 +27,22 @@ class UserInfoController extends Controller
     }
 
     /**
-     * @Route("/profile/edit/info")
+     * @Route("/profile/edit/{id}")
+     * @Template("FOSUserBundle:Profile:info_form.html.twig")
+     * @Method("GET")
      */
-    public function showEditForm()
+    public function showEditFormAction($id)
     {
+        $contact = $this->getDoctrine()->getRepository('MyTravelBundle:UserInfo')->find($id);
 
+        if (!$contact) {
+
+            $this->redirectToRoute('mytravel_userinfo_shownewinfoform', array('id' => $id));
+
+        }
+
+        $form = $this->createForm(UserInfoType::class, $contact);
+
+        return ['form' => $form->createView(), 'id' => $id];
     }
 }
