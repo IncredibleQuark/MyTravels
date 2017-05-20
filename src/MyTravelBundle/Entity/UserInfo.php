@@ -44,7 +44,7 @@ class UserInfo
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="MyTravelBundle\Entity\User", inversedBy="userInfo")
+     * @ORM\ManyToOne(targetEntity="MyTravelBundle\Entity\User")
      */
     private $user;
 
