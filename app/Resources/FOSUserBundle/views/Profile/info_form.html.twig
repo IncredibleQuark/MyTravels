@@ -1,28 +1,24 @@
-<form action="" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit form-signin">
+<form action="{{ path('mytravel_userinfo_createnewinfo') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit form-signin">
 
-
-
-    <h2 class="form-signin-heading">Edit Info</h2>
+    <h2 class="form-signin-heading">Add some info</h2>
 
     {{ form_label(form.city, null, { 'label_attr': {'class': 'sr-only'} }) }}
     {{ form_errors(form.city) }}
-    {{ form_widget(form.city, {'attr': {'class': 'form-control', 'placeholder':"Username"}}) }}
-
+    {{ form_widget(form.city, {'attr': {'class': 'form-control', 'placeholder':"City"}}) }}
 
     {{ form_label(form.country, null, { 'label_attr': {'class': 'sr-only'} }) }}
     {{ form_errors(form.country) }}
-    {{ form_widget(form.country, {'attr': {'class': 'form-control', 'placeholder':"Email address"}}) }}
+    {{ form_widget(form.country, {'attr': {'class': 'form-control', 'placeholder':"Country"}}) }}
 
+    {{ form_label(form.phone, null, { 'label_attr': {'class': 'sr-only'} }) }}
+    {{ form_errors(form.phone) }}
+    {{ form_widget(form.phone, {'attr': {'class': 'form-control', 'placeholder':"Phone"}}) }}
 
-
-    {{ form_label(form.phone, null, { 'label_attr': {'class': 'hidden'} }) }}
-    {{ form_widget(form.phone, { 'attr': {'class': 'hidden form-control',  'placeholder':"Password"} }) }}
-
-
-    {{ form_widget(form) }}
-
+    {{ form_widget(form.user, {'value': app.user}) }}
+{{ form_widget(form) }}
 
     <div>
         <input class="btn btn-block btn-lg btn-primary" type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
     </div>
+
 </form>
