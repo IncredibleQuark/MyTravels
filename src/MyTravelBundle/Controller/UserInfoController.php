@@ -39,12 +39,10 @@ class UserInfoController extends Controller
 
         $form = $this->createForm(UserInfoType::class, $info);
 
-//        $id = $this->getUser()->getId();
-//        $user = $this->getDoctrine()->getRepository('MyTravelBundle:User')->find($id);
+        $id = $this->getUser()->getId();
+        $user = $this->getDoctrine()->getRepository('MyTravelBundle:User')->find($id);
 
-
-
-      //  $form->add('user', $user);
+        $info->setUser($user);
 
         $form->handleRequest($request);
 

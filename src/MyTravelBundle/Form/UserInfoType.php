@@ -13,7 +13,7 @@ class UserInfoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('city')->add('country')->add('phone')->add('user');
+        $builder->add('city')->add('country')->add('phone');
     }
     
     /**
