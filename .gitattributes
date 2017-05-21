@@ -1,1 +1,2 @@
-vendor/*
+vendor/* linguist-vendored
+app/* linguist-vendored
