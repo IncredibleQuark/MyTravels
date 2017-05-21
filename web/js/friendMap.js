@@ -126,6 +126,4 @@ $(function () {
     });
 
 
-})/**
- * Created by kruku on 11.05.17.
- */
+});
