@@ -100,7 +100,7 @@ var image = "https://developers.google.com/maps/documentation/javascript/example
 
 $(function () {
 
-    var url = "http://127.0.0.1:8000/profile/getMapData/";
+    var url = "localhost/profile/getMapData/";
 
     $.ajax({
         url: url,

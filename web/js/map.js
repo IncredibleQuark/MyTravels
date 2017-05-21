@@ -56,7 +56,7 @@ $(function() {
         var userId = document.getElementById('user_id').innerText;
 
         data = {'user': userId, 'city': city, 'country': country, 'date': date, 'type':type, 'lat': latlng.lat(), 'lng': latlng.lng()};
-        var url = "http://127.0.0.1:8000/Travel/new";
+        var url = "localhost/Travel/new";
 
         $.ajax({
             url: url,
