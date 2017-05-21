@@ -36,7 +36,7 @@ $(function () {
 
 
         $.ajax({
-            url: "localhost/Message/new/send",
+            url: "http://127.0.0.1:8000/Message/new/send",
             data: JSON.stringify(data),
             method: "POST",
             type: 'json'
