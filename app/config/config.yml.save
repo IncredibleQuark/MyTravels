@@ -60,7 +60,8 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: gmail
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
@@ -78,9 +79,12 @@ fos_user:
             from_email:
                 address:        mytravels@gmail.com
                 sender_name:    MyTravels
-            enabled:    false # change to false to disable registration email confirmation
+            enabled:    true # change to false to disable registration email confirmation
     resetting:
         email:
             from_email:
                 address:        mytravels@gmail.com
                 sender_name:    MyTravels
+
+     service:
+        mailer:  fos_user.mailer.twig_swift

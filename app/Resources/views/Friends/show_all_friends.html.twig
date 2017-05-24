@@ -1,15 +1,15 @@
 {% extends "@FOSUser/layout.html.twig" %}
-{% block fos_user_content %}
-
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title text-center">My Friends</h3>
+{% block content %}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">My Friends</h3>
+        </div>
+        {% for friend in friends %}
+        <div class="panel-body">
+            <p class="btn btn-info"><a href="{{ path('mytravel_friend_showuserbyid', {'id': friend.id}) }}">{{ friend.username }}</a></p>
+        </div>
+                {% endfor %}
     </div>
-    {% for friend in friends %}
-    <div class="panel-body">
-        <p class="btn btn-info"><a href="{{ path('mytravel_friend_showuserbyid', {'id': friend.id}) }}">{{ friend.username }}</a></p>
-    </div>
-            {% endfor %}
 </div>
-
-{% endblock fos_user_content %}
+{% endblock content %}
