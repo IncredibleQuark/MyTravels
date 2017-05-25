@@ -7,7 +7,7 @@ var msg =  document.getElementById('successMessage');
 
 function initMap() {
     var atlantic = {lat: 35.444732, lng: -39.2746};
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: atlantic,
         zoom: 3,
         mapTypeControl: true,
@@ -56,13 +56,14 @@ $(function() {
         var userId = document.getElementById('user_id').innerText;
 
         data = {'user': userId, 'city': city, 'country': country, 'date': date, 'type':type, 'lat': latlng.lat(), 'lng': latlng.lng()};
-        var url = "http://46.101.141.139/Travel/new";
+        var url = "/Travel/new";
 
         $.ajax({
             url: url,
             method: 'POST',
             data: JSON.stringify(data),
-            dataType: 'json'
+            dataType: 'json',
+          //  headers: { 'Accept': 'application/hal+json', 'Access-Control-Allow-Origin': '*'  }
         }).done(function(response) {
             infowindow.close();
             msg.classList.remove('hidden');

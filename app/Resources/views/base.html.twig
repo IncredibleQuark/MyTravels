@@ -33,8 +33,7 @@
             {%  block content %}
 
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            what do you want to do now?
-                {%  include('::navtop.html.twig') %}
+
             {% else %}
 
                 <header>
@@ -133,11 +132,11 @@
                 {#</div>#}
             {% endif %}
             {% endblock %}
-    
+
 
 
         {% block javascripts %}
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
             <script src="{{ asset('js/wow.min.js') }}"></script>
             <script src="{{ asset('js/bootstrap.js') }}"></script>
             <script src="{{ asset("js/main.js") }}"></script>

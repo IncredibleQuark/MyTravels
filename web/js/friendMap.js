@@ -100,7 +100,7 @@ var image = "https://developers.google.com/maps/documentation/javascript/example
 
 $(function () {
     var id = $('#friend_id').data('id');
-    var url = "http://46.101.141.139/friend/getMapData/"+id;
+    var url = "/friend/getMapData/"+id;
 
     $.ajax({
         url: url,
