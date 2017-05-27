@@ -19,7 +19,7 @@
             <link rel="stylesheet" href="{{ asset("css/animate.css") }}">
             <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-            <link rel="stylesheet" href="{{ asset('css/main2.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
             <link rel="stylesheet" href="{{ asset('foundation-icons/foundation-icons.css') }}">
         {% endblock %}
 
@@ -28,7 +28,7 @@
     </head>
 
     <body>
-    {%  include('::navtop.html.twig') %}
+    {%  include('navtop.html.twig') %}
 
             {%  block content %}
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -59,7 +59,7 @@
                                                 <a href="{{ path("fos_user_security_login") }}" class="btn btn-secondary btn-lg sign-in">Sign in</a>
                                             </div>
                                             <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                                                <a href="#invite" class="btn btn-primary btn-lg scroll">Register</a>
+                                                <a href="{{ path("fos_user_registration_register") }}" class="btn btn-primary btn-lg scroll">Register</a>
                                             </div>
                                         </div><!--End Button Row-->
                                     </div>
