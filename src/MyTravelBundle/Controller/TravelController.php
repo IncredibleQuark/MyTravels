@@ -31,8 +31,6 @@ class TravelController extends Controller
         return $response;
     }
 
-
-
     /**
      * Creates a new travel entity.
      *
@@ -62,7 +60,7 @@ class TravelController extends Controller
     }
 
     /**
-     * @Route("/profile/getMapData/", name="profile_map")
+     * @Route("/profile/getMapData", name="profile_map")
      */
     public function loadUserTravelsAction()
     {

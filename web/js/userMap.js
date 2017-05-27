@@ -100,10 +100,11 @@ var image = "https://developers.google.com/maps/documentation/javascript/example
 
 $(function () {
 
-    var url = "/profile/getMapData/";
+    var url = "/profile/getMapData";
 
     $.ajax({
         url: url,
+        method: 'GET',
         dataType: 'json'
     }).done(function (response) {
 
