@@ -1,17 +1,13 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
-{% block content %}
+
+{% block fos_user_content %}
+
     {% include "FOSUserBundle:Profile:show_content.html.twig" %}
     <br>
     <div id="map">
 
     </div>
-
-{% endblock %}
-
-{% block fos_user_content %}
-
-
 {% endblock fos_user_content %}
 
 

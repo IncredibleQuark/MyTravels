@@ -7,6 +7,7 @@ body {
     padding-bottom: 70px;
 }
 
+
 h1, h2, h3, h4, h5, h6, p, .btn, .navbar-nav a, .form-control, .list-inline, small, #pricing {
   font-family: 'Montserrat', sans-serif;
 }
@@ -59,7 +60,7 @@ p {
 
 .card {
     padding: 20px;
-    background-color: #80b3d6;
+    background-color: #F4D06F;
     width: 60rem;
 }
 
