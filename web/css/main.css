@@ -35,7 +35,7 @@ h2 {
 h3 {
   font-size: 16px;
   line-height: 30px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   color: #231f20;
   font-weight: 700;
 }
@@ -109,7 +109,7 @@ a:hover, a:focus {
 
 /*------------------Buttons---------------------*/
 .btn:focus {
-  outline: 0px auto -webkit-focus-ring-color;
+  outline: 0 auto -webkit-focus-ring-color;
   outline: none;
 }
 
@@ -248,13 +248,13 @@ a:hover, a:focus {
    ========================================================================== */
 
 .navbar {
-    border: 0px solid rgba(0, 0, 0, 0);
+    border: 0 solid rgba(0, 0, 0, 0);
     background: #AF5B5B;
     margin: auto;
     min-height: 60px;
     padding-top: 8px;
     position: fixed;
-    top: 0px;
+    top: 0;
     transition: top 0.4s ease 0s;
 }
 
@@ -321,7 +321,7 @@ header {
   width: 100%;
   left: 0;
   right: 0;
-  margin-left: 0px;
+  margin-left: 0;
   margin-bottom: 14%;
 }
 
@@ -374,19 +374,19 @@ header {
 }
 
 .pad-xl {
-	padding: 200px 0px;
+	padding: 200px 0;
 }
 
 .pad-lg {
-	padding: 160px 0px;
+	padding: 160px 0;
 }
 
 .pad-sm {
-	padding: 80px 0px;
+	padding: 80px 0;
 }
 
 .pad-xs {
-	padding: 30px 0px;
+	padding: 30px 0;
 }
 
 
@@ -448,7 +448,7 @@ hr.line {
   height: 60px;
   border: 2px solid #4ec3cd;
   -moz-border-radius: 30px;
-  -o-border-radius: 30px;
+  /*-o-border-radius: 30px;*/
   -webkit-border-radius: 30px;
   border-radius: 30px;
   margin: auto;
@@ -457,7 +457,7 @@ hr.line {
 
 
 .news-container {
-  padding: 10px 0px 20px;
+  padding: 10px 0 20px;
   border-bottom: 1px dotted #d9d9d9;
 }
 
@@ -467,7 +467,7 @@ hr.line {
 
 footer {
   background: #ffffff;
-  padding: 40px 0px;
+  padding: 40px 0;
 }
 
 .social li a:hover {
@@ -484,21 +484,21 @@ footer {
 }
 
 .pricing-container {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .pricing-table {
   background: transparent;
   margin-bottom: 50px;
-  margin-top: 0px;
+  margin-top: 0;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
   -o-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 .pricing-table.active {
-  box-shadow: 0px 0px 12px rgba(41,46,50,0.6); 
+  box-shadow: 0 0 12px rgba(41,46,50,0.6);
   position: absolute;
   margin: auto;
   z-index: 200;
@@ -595,8 +595,7 @@ footer {
    ========================================================================== */
 .form-control {
     background-color: #FFFFFF;
-    background-image: none;
-    border: 0px solid transparent;
+    border: 0 solid transparent;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: #929496;
@@ -639,7 +638,7 @@ footer {
   font-size: 12.5px;
   line-height: 1.33;
   padding: 16px 13px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
 
 
@@ -648,7 +647,7 @@ footer {
   font-size: 12.5px;
   line-height: 1.33;
   padding: 16px 13px;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
 
 #be-the-first { 
