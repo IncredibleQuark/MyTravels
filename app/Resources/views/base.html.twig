@@ -28,26 +28,24 @@
     </head>
 
     <body>
-
     {%  include('::navtop.html.twig') %}
+
             {%  block content %}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
-            {% else %}
-
+                {% else %}
                 <header>
                     <div class="container">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <a href="index.html"><img src="img/logo.svg" alt="Logo">MyTravels.com</a>
-                            </div>
-                            <div class="col-xs-6 signin text-right navbar-nav">
-                                <a href="#pricing" class="scroll">Pricing</a>&nbsp; &nbsp;<a href="#">Sign in</a>
-                            </div>
-                        </div>
+                        {#<div class="row">#}
+                            {#<div class="col-xs-6">#}
+                                {#<a href="#"><img src="{{ asset('images/logo.svg') }}" alt="Logo">MyTravels.com</a>#}
+                            {#</div>#}
+                            {#<div class="col-xs-6 signin text-right navbar-nav">#}
+                                {#<a href="{{ path('fos_user_security_login') }}" class="sign-in">Sign In</a>&nbsp; &nbsp;<a href="#" class="register">Register</a>#}
+                            {#</div>#}
+                        {#</div>#}
 
-                        <div class="row header-info">
+                        <div class="row header-info" id="homepage-content">
                             <div class="col-sm-10 col-sm-offset-1 text-center">
                                 <h1 class="wow fadeIn">Welcome to MyTravels</h1>
                                 <br />
@@ -58,10 +56,10 @@
                                     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                                         <div class="row">
                                             <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                                                <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Learn More</a>
+                                                <a href="{{ path("fos_user_security_login") }}" class="btn btn-secondary btn-lg sign-in">Sign in</a>
                                             </div>
                                             <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                                                <a href="#invite" class="btn btn-primary btn-lg scroll">Request Invite</a>
+                                                <a href="#invite" class="btn btn-primary btn-lg scroll">Register</a>
                                             </div>
                                         </div><!--End Button Row-->
                                     </div>
@@ -82,7 +80,7 @@
                         <div class="row margin-30 news-container">
                             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="0.8s">
                                 <a href="#" target="_blank">
-                                    <img class="news-img pull-left" src="img/press-01.jpg" alt="Tech Crunch">
+                                    <img class="news-img pull-left" src="{{ asset('images/press-01.jpg') }}" alt="Tech Crunch">
                                     <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.<br />
                                         <small><em>Tech Crunch - January 15, 2015</em></small></p>
                                 </a>
@@ -92,7 +90,7 @@
                         <div class="row margin-30 news-container">
                             <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 wow fadeInLeft" data-wow-delay="1.2s">
                                 <a href="#" target="_blank">
-                                    <img class="news-img pull-left" src="img/press-02.jpg" alt="Forbes">
+                                    <img class="news-img pull-left" src="{{ asset('images/press-02.jpg') }}" alt="Forbes">
                                     <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut. <br />
                                         <small><em>Forbes - Feb 25, 2015</em></small></p>
                                 </a>
@@ -123,13 +121,6 @@
 
                     </div>
                 </footer>
-                {#<div class="jumbotron text-center">#}
-                    {#<h1>Welcome to myTravels.com!</h1>#}
-                    {#<p>Clik here to </p>#}
-                    {#<p><a class="btn btn-primary btn-lg" href="{{ path('fos_user_security_login') }}" role="button">SignUp</a></p>#}
-                    {#<p>or here to register new account!</p>#}
-                    {#<p><a class="btn btn-primary btn-lg" href="{{ path('fos_user_registration_register') }}" role="button">Register</a></p>#}
-                {#</div>#}
             {% endif %}
             {% endblock %}
 
