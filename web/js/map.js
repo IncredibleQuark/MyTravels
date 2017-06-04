@@ -16,33 +16,33 @@ function initMap() {
             position: google.maps.ControlPosition.TOP_CENTER
         }
     });
+    //
+    // infowindow = new google.maps.InfoWindow({
+    //     content: document.getElementById('saveForm')
+    // });
+    //
+    //
+    // messagewindow = new google.maps.InfoWindow({
+    //     content: document.getElementById('message')
+    // });
 
-    infowindow = new google.maps.InfoWindow({
-        content: document.getElementById('saveForm')
-    });
-
-
-    messagewindow = new google.maps.InfoWindow({
-        content: document.getElementById('message')
-    });
-
-    google.maps.event.addListener(map, 'click', function(event) {
-        marker = new google.maps.Marker({
-            position: event.latLng,
-            map: map
-        });
-        msg.classList.add('hidden');
+    // google.maps.event.addListener(map, 'click', function(event) {
+    //     marker = new google.maps.Marker({
+    //         position: event.latLng,
+    //         map: map
+    //     });
+    //     msg.classList.add('hidden');
 
         // google.maps.event.addListener(marker, 'click', function() {
         //     infowindow.open(map, marker);
         //     form.classList.remove('hidden');
         // });
-    });
+    // });
+    infowindow = new google.maps.InfoWindow();
 
     // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
@@ -87,13 +87,17 @@ function initMap() {
             //     title: place.name,
             //     position: place.geometry.location
             // }));
-            ms = new google.maps.Marker({
+            var mark = new google.maps.Marker({
                 position: place.geometry.location,
                 map: map,
-                draggable: true
+                draggable: false
             });
-            google.maps.event.addListener(ms, 'click', function() {
-                alert('je');
+
+
+            google.maps.event.addListener(map, 'tilesloaded', function() {
+                infowindow.setContent(place.name);
+                infowindow.open(map, mark);
+
             });
 
             if (place.geometry.viewport) {
@@ -133,7 +137,7 @@ $(function() {
             url: url,
             method: 'POST',
             data: JSON.stringify(data),
-            dataType: 'json',
+            dataType: 'json'
           //  headers: { 'Accept': 'application/hal+json', 'Access-Control-Allow-Origin': '*'  }
         }).done(function(response) {
             infowindow.close();
