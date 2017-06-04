@@ -2,10 +2,10 @@
 
 
 {% block fos_user_content %}
-
-    {% include "FOSUserBundle:Profile:show_content.html.twig" %}
-    <br>
-    <div id="map">
+    <div class="container">
+        {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+        <br>
+        <div id="map"></div>
 
     </div>
 {% endblock fos_user_content %}

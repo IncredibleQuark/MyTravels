@@ -1,33 +1,34 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
 {%  block fos_user_content %}
-    <h3 class="text-center">Add new location!</h3>
+    <div class="container">
+        <h3 class="text-center">Add new location!</h3>
 
-        <ol>
-            <li>Click on the map to place the marker.</li>
-            <li>Click to marker to enable form.</li>
-            <li>Insert data and save your new travel.</li>
-            <li>Your travel is saved on your personal map!</li>
-        </ol>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-    <div id="saveForm" class="hidden">
-        <form>
-        <table>
-           <p class="hidden" id="user_id">{{ app.user.id }}</p>
-            <tr><td>City:</td> <td><input type='text' id='city'required/> </td> </tr>
-            <tr><td>Country:</td> <td><input type='text' id='country' required/> </td> </tr>
-            <tr><td>Date:</td> <td><input type='date' id='date'/> </td> </tr>
-            <tr><td>Type:</td> <td><select id='type'>
-                        <option value='holiday' SELECTED>Holiday</option>
-                        <option value='work'>Work</option>
-                    </select> </td></tr>
-            <tr><td></td><td><input type='submit' value='Save' id="submit"/></td></tr>
-        </table>
-        </form>
+            <ol>
+                <li>Click on the map to place the marker.</li>
+                <li>Click to marker to enable form.</li>
+                <li>Insert data and save your new travel.</li>
+                <li>Your travel is saved on your personal map!</li>
+            </ol>
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map"></div>
+        <div id="saveForm" class="hidden">
+            <form>
+            <table>
+               <p class="hidden" id="user_id">{{ app.user.id }}</p>
+                <tr><td>City:</td> <td><input type='text' id='city'required/> </td> </tr>
+                <tr><td>Country:</td> <td><input type='text' id='country' required/> </td> </tr>
+                <tr><td>Date:</td> <td><input type='date' id='date'/> </td> </tr>
+                <tr><td>Type:</td> <td><select id='type'>
+                            <option value='holiday' SELECTED>Holiday</option>
+                            <option value='work'>Work</option>
+                        </select> </td></tr>
+                <tr><td></td><td><input type='submit' value='Save' id="submit"/></td></tr>
+            </table>
+            </form>
+        </div>
+        <div class="hidden bg-success" id="successMessage">Location saved</div>
     </div>
-    <div class="hidden bg-success" id="successMessage">Location saved</div>
-
 
 
 

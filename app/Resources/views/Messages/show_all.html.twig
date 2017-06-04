@@ -1,23 +1,23 @@
 {% extends "@FOSUser/layout.html.twig" %}
 {% block fos_user_content %}
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title text-center">My Messages</h3>
-        </div>
-        {%  if messages is not defined %}
-            <div class="panel-body">
-                <h3>You have no messages!</h3>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">My Messages</h3>
             </div>
-        {% else %}
-            {% for message in messages %}
+            {%  if messages is not defined %}
                 <div class="panel-body">
-                    <p class="btn btn-info">From: {{ message.senderUsername }}</p>
-                    <p class="panel-info">Date: {{ message.date|date('d-m-Y H:i:s') }}</p>
-                    <p class="panel-body">{{ message.content }}</p>
+                    <h3>You have no messages!</h3>
                 </div>
-            {% endfor %}
-        {% endif %}
+            {% else %}
+                {% for message in messages %}
+                    <div class="panel-body">
+                        <p class="btn btn-info">From: {{ message.senderUsername }}</p>
+                        <p class="panel-info">Date: {{ message.date|date('d-m-Y H:i:s') }}</p>
+                        <p class="panel-body">{{ message.content }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
-
 {% endblock fos_user_content %}
